@@ -7,10 +7,9 @@ import {
   ScrollRestoration,
 } from "react-router";
 import { Theme } from "@radix-ui/themes";
-import { Text, Button } from "@radix-ui/themes";
 
 import type { Route } from "./+types/root";
-import "./app.css";
+
 import "@radix-ui/themes/styles.css";
 
 export const links: Route.LinksFunction = () => [
@@ -38,8 +37,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Theme>
           {children}
-          <Text>Hello from Radix Themes :)</Text>
-    			<Button>Let's go</Button>
           <ScrollRestoration />
           <Scripts />
         </Theme>
@@ -69,11 +66,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main>
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre>
           <code>{stack}</code>
         </pre>
       )}
