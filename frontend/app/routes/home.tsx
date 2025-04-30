@@ -3,6 +3,7 @@ import type { Route } from "./+types/home";
 import { useEffect, useState } from "react";
 import type { components } from "api/schema";
 import { Button } from "@radix-ui/themes";
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -11,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const [games, setGames] = useState<components["schemas"]["Game"][]>([]);
+  const [games, setGames] = useState<components["schemas"]["ReadGame"][]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,9 +25,8 @@ export default function Home() {
   }, []);
 
   const click = async () => {
-    const { data } = await client.POST("/games", {
+     await client.POST("/games", {
       body: {
-        id: 123,
         week: 5,
         home_team: "Team A",
         away_team: "Team B",
