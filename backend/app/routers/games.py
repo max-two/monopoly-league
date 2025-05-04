@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from sqlmodel import select
 from ..dependencies import DB
-from ..models.game import CreateGame, Game, ReadGame
+from ..models import CreateGame, Game, ReadGame
 
 
 router = APIRouter(

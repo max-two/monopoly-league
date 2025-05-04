@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine
-from sqlmodel import SQLModel, Session
+from sqlmodel import SQLModel, Session, create_engine
+
+from models import * # This ensures we register all modals to SQLModel
 
 sqlite_file_name = "database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
