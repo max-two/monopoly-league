@@ -330,7 +330,7 @@ if __name__ == "__main__":
         db.commit()
 
         # Calculate winnings per user
-        for user in [max, cale, jesus, justin, joey, mason, asher, ben]:
+        for user in [max, cale, jesus, justin, joey, mason, asher, ben, mikey, aaron]:
             winnings = 0
             for bet in user.coin_flip_bets:
                 winnings += calc_bet_winnings(bet, coin_flip_multiplier)

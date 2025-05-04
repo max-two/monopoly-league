@@ -181,3 +181,5 @@ class SpreadBet(SQLModel, table=True):
 
 # The bet option to game relationship is actually one-to-one - therefore I should just get rid of them and make them columns?
 # Can i add unique constraints to the columns?
+# Build in rounding (be friendly) - add to rules this and the nom order
+# Extra 30 winnings to give out I think
